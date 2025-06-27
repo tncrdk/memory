@@ -18,6 +18,8 @@ void memory_bandwidth_benchmark(size_t array_size_mb) {
     long long read_sum = 0;
     long long write_sum = 0;
 
+    std::cout << "------------------------" << std::endl;
+
     // --- Write Benchmark ---
     std::cout << "Benchmarking Memory Write Bandwidth (" << array_size_mb << " MB)..." << std::endl;
     auto start_write = std::chrono::high_resolution_clock::now();
@@ -39,7 +41,9 @@ void memory_bandwidth_benchmark(size_t array_size_mb) {
     std::chrono::duration<double> duration_read = end_read - start_read;
     double read_bandwidth_gbps = static_cast<double>(array_size_bytes) / (1024.0 * 1024.0 * 1024.0) / duration_read.count();
     std::cout << "Read time: " << duration_read.count() << " seconds, Bandwidth: " << read_bandwidth_gbps << " GB/s" << std::endl;
-    
+
+    std::cout << "------------------------\n" << std::endl;
+
     // To ensure read_sum is not optimized away if compiler is too smart
     volatile long long temp_sum = read_sum;
 }
