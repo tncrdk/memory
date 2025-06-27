@@ -1,0 +1,11 @@
+# memory_benchmark/arithmetic_benchmarkConfig.cmake.in
+# This file is generated during installation and helps find_package(memory_benchmark) locate the library.
+
+# Provide the installed targets
+include("${CMAKE_CURRENT_LIST_DIR}/memory_benchmark_targets.cmake")
+
+# Set the public include directories for consumers of memory_benchmark
+set(memory_benchmark_INCLUDE_DIRS "${CMAKE_INSTALL_PREFIX}/include")
+
+# Define variables that indicate the library was found
+set(memory_benchmark_FOUND TRUE)
