@@ -49,7 +49,7 @@ void memory_bandwidth_benchmark(size_t array_size_mb) {
 }
 
 void run() {
-    size_t test_size_mb = 512; // Adjust to be larger than your CPU's cache sizes
+    size_t test_size_mb = 2048; // Adjust to be larger than your CPU's cache sizes
     memory_bandwidth_benchmark(test_size_mb);
 }
 
